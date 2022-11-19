@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form</title>
+	<style>
+		body{
+			background-image: linear-gradient(orange,white,green);
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 100vh;
+
+		}
+		.container{
+			width: 600px;
+			min-height: 400px;
+			border: 3px dotted black;
+			background-color: lightgray;
+			margin: 50px auto;
+		}
+		h2{
+			text-align:center ;
+		}
+		.m{
+			margin-left: 30px;
+		}
+		input[type="text"],
+		input[type="password"],
+		input[type="radio"],
+		input[type="email"],
+		input[type="checkbox"],
+		input[type="number"],
+        input[type="date"],
+        input[type="time"],
+		select{
+			background-color: lightblue;
+			border: 0px;
+			outline: 0px;
+			border-bottom: 3px solid red;
+			border-radius: 40px;
+			margin-left: 10px;
+			margin-bottom: 15px;
+		}
+		input[type="submit"]{
+			margin: 20px 20px;
+		}
+		input:valid{
+			border: 2px dotted green;
+		}
+		input:invalid{
+			border: 2px dotted red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+        <h2>Student register</h2>
+        <form method="get">
+			<div>
+				<label class="m">enter first name :</label>
+				<input type="text" name="fname" placeholder="enter first name">
+			</div>
+			<div>
+				<label class="m">enter last name :</label>
+				<input type="text" name="lname" placeholder="enter last name">
+			</div>
+			<div>
+				<label class="m">enter email id :</label>
+				<input type="email" name="mail" placeholder="enter email" required>
+			</div>
+			<div>
+				<label class="m">enter mobile number :</label>
+				<input type="number" name="mob number" placeholder="enter mobile number">
+			</div>
+			<div>
+				<label class="m">enter password :</label>
+				<input type="password" name="pass" placeholder="enter password" required><span style="color: red; font-size: 25px;"> *</span>
+			</div>
+			<div>
+				<label class="m"> choose gender :</label>
+				<input type="radio" name="gender" value="male"> male
+				<input type="radio" name="gender" value="female"> female
+			</div>
+			<div>
+				<label class="m">choose your hobbies :</label>
+				<input type="checkbox" name="hobbies" value="cricket"> cricket
+				<input type="checkbox" name="hobbies" value="badminton"> badminton
+				<input type="checkbox" name="hobbies" value="reading"> reading
+				<input type="checkbox" name="hobbies" value="coding"> coding
+            </div>
+            <div>
+            	<label class="m">select city</label>
+            	<select>
+            		<option disabled selected>select from the given</option>
+            		<option>delhi</option>
+            		<option>haryana</option>
+            		<option>noida</option>
+            		<option>aligarh</option>
+            		<option>mathura</option>
+            	</select>
+            </div>
+            <div>
+            	<label class="m">enter date :</label>
+            	<input type="date" name="date" placeholder="enter date">
+            </div>
+            <div>
+            	<label class="m">enter time :</label>
+            	<input type="time" name="time" placeholder="enter time">
+            </div>
+            <div>
+            	<input type="submit" name="submit" placeholder=" submit">
+            	<input type="reset" name="reset" placeholder="reset">
+            </div>
+		</form>
+	</div>
+
+</body>
+</html>

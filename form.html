@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  <style>
+    body{
+        background: aqua;
+    }
+    .container{
+        width:600px;
+        height:600px;
+        border:2px solid blueviolet;
+        background-color: bisque;
+        margin:50px auto;
+        border-radius: 30px;
+    }
+    h2{
+        text-align: center;
+    }
+    labels{
+        margin-left: 30px;
+    }
+    input[type="text"],input[type="password"]{
+        width:200px;
+        height:20px;
+    
+    }
+    input[type="number"]{
+        width:200px;
+        height:20px; 
+        margin:auto;
+    }
+    #phonenumber.label{
+        width:200px;
+        height:20px; 
+        margin:auto;
+    }
+    input[type="submit"],input[type="reset"]{
+        margin:20px 20px;
+        width:150px;
+        height:40px;
+        background:skyblue;
+        color: aliceblue;
+    }
+    #btn{
+        margin: auto;
+    }
+
+    
+</style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collect user data</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form action="./account.htm" method="get">
+            <div>
+                <label for="" class="labels">Enter first name:</label>
+                <input type="text" placeholder="Enter your first name" name="fname"/>
+                
+            </div>
+            <br />
+            <div>
+                <label for="" class="labels">Enter last name:</label>
+                <input type="text" placeholder="Enter your last name" name="lname"/>
+            </div>
+            <br />
+            <div>
+                <label for="" class="labels">Enter password:</label>
+                <input type="password" placeholder="Enter password" name="pwd" required/>
+            </div>
+            <br />
+            <div>
+                <label for="" class="labels">Select Gender:</label>
+                <input type="radio"  name="gender" checked value="male"/>Male
+                <input type="radio"  name="gender" value="female"/>Female
+            </div>
+            <br />
+            <div>
+                <label for="" class="labels">Select Hobbies:</label>
+               <input type="checkbox" name="hobbies" value="Reading"/>Reading
+               <input type="checkbox" name="hobbies" value="Writing"/>Writing
+               <input type="checkbox" name="hobbies" value="Playing"/>Playing
+               <input type="checkbox" name="hobbies" value="Coding"/>Coding
+            </div>
+            <br />
+            <div>
+                <label for="" class="labels">Select City:</label>
+                <select name="" id="">
+               <option diabled selected>Select from below</option>
+               <option value="Chandigarh">Chandigarh</option>
+               <option value="Delhi">Delhi</option>
+               <option value="Ambala">Ambala</option>
+               <option value="Panipat">Panipat</option>
+            </div>
+            <br />
+            
+            <div>
+                <label for="" class="labels">Enter phone number:</label>
+                <input type="number" id="phonenumber" name="phonenumber"/>
+            </div>
+            <br />
+            <div>
+                <label for="" class="labels">Select DOB:</label>
+                <input type="date" name="dob"/>
+</div>
+<br />
+<div>
+    <label for="" class="labels">Select DOT:</label>
+    <input type="time" name="dot"/>
+</div>
+<br />
+<div id="btn">
+    <input type="submit"/>
+    <input type="reset"/>
+    
+</div>
+
+        
+        </select>
+        </form>
+    </div>
+</body>
+</html>

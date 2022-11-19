@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fullstack To-Do List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+      <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("https://static2.bigstockphoto.com/8/6/2/large1500/268758547.jpg");
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+}
+header,
+form {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  font-size: 40px;
+}
+
+form input,
+form button {
+  padding: 10px;
+  border: none;
+  font-size: 24px;
+  background: grey;
+  outline: none;
+  border-radius: 10px;
+}
+form button {
+  color: deeppink;
+  background-color: lightgray;
+  cursor: pointer;
+  border-radius: 10px;
+}
+form button:hover {
+  color: blue;
+  background-color: red;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  list-style: none;
+  min-width: 25%;
+}
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: white;
+  color: black;
+  margin: 10px;
+}
+.cmpltBtn {
+  background-color: green;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+}
+.deleteBtn {
+  background-color: darkred;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.todo li {
+  flex: 1;
+  padding: 0px 10px;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.todo-done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+      </style>
+  </head>
+  <body>
+    <header>FULLSTACK TO-DO LIST</header>
+
+    <form>
+      <input type="text" class="todo-input" />
+      <button class="todo-button">
+        <i class="fa fa-plus-square"></i>
+      </button>
+    </form>
+
+    <div class="todo-container">
+      <ul class="todo-list">
+        
+      </ul>
+    </div>
+    <script>
+var todoInput = document.querySelector(".todo-input");
+var btn = document.querySelector(".todo-button");
+var todoList = document.querySelector(".todo-list");
+
+btn.onclick = create;
+todoList.onclick = performAction;
+
+var data;
+function create(e) {
+  e.preventDefault();
+  data = todoInput.value;
+  console.log(data);
+  data = data.trim();
+  if (data != "") {
+    var newDiv = document.createElement("div");
+    newDiv.classList.add("todo");
+
+    var newLi = document.createElement("li");
+    newLi.classList.add("todo-item");
+    newLi.innerText = data;
+    newDiv.appendChild(newLi);
+
+    var cmpltBtn = document.createElement("button");
+    cmpltBtn.classList.add("cmpltBtn");
+    cmpltBtn.innerHTML = '<i class="fa fa-check " aria-hidden="true"></i>';
+    newDiv.appendChild(cmpltBtn);
+
+    var deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("deleteBtn");
+    deleteBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+    newDiv.appendChild(deleteBtn);
+
+    todoList.appendChild(newDiv);
+    todoInput.value = "";
+  } else {
+    alert("Box can not be blank");
+  }
+}
+
+function performAction(e) {
+  var item = e.target;
+
+  if (item.classList[0] == "cmpltBtn") {
+    var parent = item.parentElement;
+    parent.classList.toggle("todo-done");
+  }
+  if (item.classList[0] == "deleteBtn") {
+    var parent = item.parentElement;
+    parent.remove();
+  }
+}
+    </script>
+  </body>
+</html>
